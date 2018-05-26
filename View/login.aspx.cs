@@ -1,4 +1,10 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Esondage2018.View
 {
@@ -31,6 +37,26 @@ namespace Esondage2018.View
                         Session["admin"] = "admin";
                     }
                     
-             
                 }
-          
+            }
+            if(userison==true)
+            {
+                Response.Redirect("Index.aspx", true);
+                TextBox1.Visible = true;
+                TextBox1.Text = typeofuser;
+
+            }
+            else
+            {
+                TextBox1.Visible = true;
+            }
+            /* File.AppendAllText(file1, "insert.Parameters.AddWithValue(\"@choixs\", RadioButtonList1.Text);");
+                    File.AppendAllText(file1, "insert.Parameters.AddWithValue(\"@ids\", " + title + ");");
+                    File.AppendAllText(file1, " try  {conn.Open();insert.ExecuteNonQuery();conn.Close();}catch {}}}}");*/
+            
+                conn.Close();
+           
+            
+        }
+    }
+}
