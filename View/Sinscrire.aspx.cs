@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Esondage2018.View
+{
+    public partial class Sinscrire : System.Web.UI.Page
+    { 
+        //public static int Pair=0;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            textboxt1.Visible = false;
+        }
+        protected void Add_Pass_Clicx(object sender, EventArgs e)
+        {
+
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=" + Server.MapPath("~\\App_Data\\mydatabase.mdf") + ";Integrated Security=True");
+
+            
+            
+            conn.Open();
+            String a = String.Format("{0}", Request.Form["nom"]);
+                     String b = String.Format("{0}", Request.Form["email"]);
+                    String c = String.Format("{0}", Request.Form["motdepasse"]);
+                    String d = String.Format("{0}", Request.Form["admin"]);
+                    if (String.IsNullOrEmpty(b) || String.IsNullOrEmpty(a) || String.IsNullOrEmpty(c) || String.IsNullOrEmpty(d))
+                    {
+                        textboxt1.Visible = true;
+                        textboxt1.Text = "Champs vide(s)";
+                    }
+            SqlCommand command = new SqlCommand("select * from utilisateur where email='" + b + "';", conn);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    //Response.Redirect("Resultat.aspx", true);
+                    textboxt1.Visible = true;
+                    textboxt1.Text = "Email existe déja";
+                }
+                else
+                {
+
+                    conn = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=" + Server.MapPath("~\\App_Data\\mydatabase.mdf") + ";Integrated Security=True");
+                    SqlCommand insert = new SqlCommand("insert into utilisateur(nom,email,pass,TypeUser) values (@a,@b,@c,@d);", conn);
+                    
+                    insert.Parameters.AddWithValue("@a", a);
+                    insert.Parameters.AddWithValue("@b", b);
+                    insert.Parameters.AddWithValue("@c", c);
+                    insert.Parameters.AddWithValue("@d", d);
+
+                   
+                    try
+                    {
+                        //if (Pair % 2 == 1)
+                        //{
+                            conn.Open();
+                            insert.ExecuteNonQuery();
+                            conn.Close();
+                        //}
+                        //Pair++;
+                    }
+                    catch (Exception ex)
+                    {
+                        textboxt1.Visible = true;
+                        textboxt1.Text = ex.Message;
+                    }
+            
+                    Session["nom"] = a;
+                    if (d.Equals("on"))
+                    {
+                        Session["nom"] += " (admin)";
+                        Session["admin"] = "admin";
+                    }
+                    Response.Redirect("Index.aspx", true);
+                }
+            }
+            }
+            
+        
+    }
+}
