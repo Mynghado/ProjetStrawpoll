@@ -1,0 +1,142 @@
+﻿body{
+    background-image :url(../Picture/losanges.jpg);
+}
+
+.hiddencol {
+    display: none;
+    BackColor: "#FF9900";
+}
+
+.auto-style9 {
+    width: 334px;
+    height: 61px;
+}
+
+.auto-style10 {
+    width: 312px;
+    height: 61px;
+}
+
+table {      
+
+}
+
+table th {
+    background-color: #00FF00;
+    color: green;
+    font-weight: bold;
+}
+
+table th, table td {
+    padding: 5px;
+}
+
+.cssgridview {
+    background-color : green;
+}
+
+h1 { font-weight: bold; color : red;
+}
+
+.aclass{Border: 1px solid lighgray;}
+.aclass tr td {background:green; font-weight:bold; color: white}
+
+.ugnom {
+    width : 500px;
+    text-align : left;
+    margin : 0;
+}
+
+.ugsp {
+    color : #CAC291;
+    font-weight : bold;
+}
+
+.cadre {
+    background-color : #660033;
+    height : 35px;
+    width : 145px;
+    max-width : 145px;
+    border: 1px solid #fff;
+    text-align : center;
+}
+
+#admin {
+    position: relative; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-170%, 100%); /* décalage de 50% de sa propre taille */
+}
+
+#add {
+    position: relative; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(70%, 0%); /* décalage de 50% de sa propre taille */
+}
+.chk {
+    position: relative; /* postulat de départ */
+    top: 15%; left: 0%; /* à 50%/50% du parent référent */
+}
+
+.sthead {
+    background-color : #000000;
+    border-bottom :double;
+    border-color : white;
+}
+
+.rhead {
+    display : flex;
+    justify-content : flex-end;
+    position : relative;
+    transform: translate(0%, -100%);
+    margin-right : 30px;
+}
+
+.lhead {
+    display : flex;
+    justify-content : flex-start;
+}
+
+.stlogo {
+    margin-top : 12px;
+    margin-left : 30px;
+    width : 280px;
+    height : 48px;
+}
+
+.rslogo {
+    width : 38px;
+    height : 38px;
+    margin-left : 10px;
+}
+
+#recherche {
+    width : 300px;
+    background : black;
+    border : 2px solid #fff;
+}
+  
+#recherche input {
+    margin-top : 5px;
+    height:24px;
+    float:left;
+    display : block;
+    color : white;
+}
+  
+#recherche .sinput {
+    font: 300 12px;
+    background:none;
+    width: 262px;
+    padding:0 9px;
+    color : white;
+}
+
+#recherche .loupe {
+    background:url("../Picture/loupe.png") no-repeat 0 0;
+    width: 24px;
+    padding-right : 2px;
+}
+  
+#sAdd {
+    margin-top : 30px;
+}
