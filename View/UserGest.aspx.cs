@@ -19,7 +19,7 @@ namespace Esondage2018.View
                 Response.Redirect("Index.aspx");
 
             }
-            if (String.IsNullOrEmpty((String)Session["nom"]))
+            /*if (String.IsNullOrEmpty((String)Session["nom"]))
             {
                 Label15.Text = " Anonymous ";
                 Response.Redirect("login.aspx");
@@ -29,9 +29,7 @@ namespace Esondage2018.View
             else
             {
                 Label15.Text = " " + (String)Session["nom"] + " ";
-            }
-
-
+            }*/
         }
 
         protected void Button6_Click(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace Esondage2018.View
 
 
             Boolean mailexist = false;
-            String b = TextBox1.Text;
+            String b = mailTxt.Text;
             conn.Open();
             SqlCommand command = new SqlCommand("select * from utilisateur where email='" + b + "';", conn);
             using (SqlDataReader reader = command.ExecuteReader())
@@ -53,7 +51,7 @@ namespace Esondage2018.View
             }
             if (mailexist == true)
             {
-                add.Text = "walou";
+                btAddUsg.Text = "walou";
                 //Response.Redirect("Resultat.aspx", true);
                 //textboxt1.Visible = true;
             }
@@ -64,7 +62,7 @@ namespace Esondage2018.View
 
                 SqlCommand insert = new SqlCommand("insert into utilisateur(nom,email,pass,TypeUser) values (@a,@b,@c,@d);", conn);
                 String a = TextBox3.Text;
-                b = TextBox1.Text;
+                b = mailTxt.Text;
                 String c = TextBox2.Text;
                 String d = "";
                 if (CheckBox1.Checked)
@@ -93,7 +91,7 @@ namespace Esondage2018.View
                 }
                 catch (Exception ex)
                 {
-                    add.Text = ex.Message;
+                    btAddUsg.Text = ex.Message;
                 }
                 Response.Redirect("UserGest.aspx", true);
             }
@@ -106,7 +104,7 @@ namespace Esondage2018.View
 
 
 
-        protected void Button7_Click(object sender, EventArgs e)
+        /*protected void Button7_Click(object sender, EventArgs e)
         {
             GridView1.DataSourceID = "";
             string query = "select * from utilisateur where nom like '" + TextBox4.Text + "%'";
@@ -129,7 +127,7 @@ namespace Esondage2018.View
 
             GridView1.DataBind();
 
-        }
+        }*/
 
         protected void Button4_Click(object sender, EventArgs e)
         {
@@ -149,4 +147,6 @@ namespace Esondage2018.View
 
 
     }
+
+
 }
