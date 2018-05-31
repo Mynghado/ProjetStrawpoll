@@ -4,7 +4,7 @@
 
 .hiddencol {
     display: none;
-    BackColor: "#FF9900";
+    BackColor="#FF9900";
 }
 
 .auto-style9 {
@@ -97,7 +97,7 @@ h1 { font-weight: bold; color : red;
 }
 
 .stlogo {
-    margin-top : 12px;
+    margin-top : 25px;
     margin-left : 30px;
     width : 280px;
     height : 48px;
@@ -110,33 +110,31 @@ h1 { font-weight: bold; color : red;
 }
 
 #recherche {
-    width : 300px;
-    background : black;
-    border : 2px solid #fff;
+    width:208px;
+    background: black;
+    border: 2px solid #fff;
 }
   
-#recherche input {
-    margin-top : 5px;
-    height:24px;
-    float:left;
-    display : block;
-    color : white;
-}
-  
-#recherche .sinput {
-    font: 300 12px;
-    background:none;
-    width: 262px;
-    padding:0 9px;
-    color : white;
-}
-
 #recherche .loupe {
     background:url("../Picture/loupe.png") no-repeat 0 0;
     width: 24px;
-    padding-right : 2px;
 }
   
-#sAdd {
-    margin-top : 30px;
+#recherche input {
+    outline:0;
+    border:0;
+    margin:0;
+    height:24px;
+    float:left;
+    display:block;
 }
+  
+#recherche input[type=text] {
+    font:300 12px;
+    background:none;
+    width:180px;
+    padding:0 9px;
+    color:#666;
+}
+
+
