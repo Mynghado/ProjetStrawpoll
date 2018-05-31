@@ -1,0 +1,267 @@
+﻿body{
+    background-image :url(../Picture/losanges.jpg);
+}
+
+.hiddencol {
+    display: none;
+    BackColor: "#FF9900";
+}
+
+.auto-style9 {
+    width: 334px;
+    height: 61px;
+}
+
+.auto-style10 {
+    width: 312px;
+    height: 61px;
+}
+
+.cssgridview {
+    background-color : green;
+}
+
+h1 { font-weight: bold; color : red;
+}
+
+.aclass{Border: 1px solid lighgray;}
+.aclass tr td {background:green; font-weight:bold; color: white}
+
+.ugnom {
+    width : 500px;
+    text-align : left;
+}
+
+.ugsp {
+    color : #CAC291;
+    font-weight : bold;
+}
+
+.cadre {
+    background-color : #660033;
+    height : 35px;
+    width : 145px;
+    max-width : 145px;
+    border: 1px solid #fff;
+    text-align : center;
+}
+
+#admin {
+    position: relative; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-170%, 100%); /* décalage de 50% de sa propre taille */
+}
+
+.add {
+    position: relative; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(70%, 0%); /* décalage de 50% de sa propre taille */
+}
+.chk {
+    position: relative; /* postulat de départ */
+    top: 15%; left: 0%; /* à 50%/50% du parent référent */
+}
+
+.sthead {
+    background-color : #000000;
+    border-bottom :double;
+    border-color : white;
+}
+
+.rhead {
+    display : flex;
+    justify-content : flex-end;
+    transform: translate(0%, -100%);
+    margin-right : 30px;
+}
+
+.lhead {
+    display : flex;
+    justify-content : flex-start;
+}
+
+.stlogo {
+    margin-top : 12px;
+    margin-left : 30px;
+    width : 280px;
+    height : 48px;
+}
+
+.rslogo {
+    width : 38px;
+    height : 38px;
+    margin-left : 10px;
+}
+
+#recherche {
+    width : 300px;
+    background : black;
+    border : 2px solid #fff;
+}
+  
+#recherche input {
+    margin-top : 5px;
+    height : 24px;
+    float : left;
+    display : block;
+    color : white;
+}
+  
+#recherche .sinput {
+    font: 300 12px;
+    background : none;
+    width: 262px;
+    padding:0 9px;
+    color : #CAC291;
+}
+
+#recherche .loupe {
+    background:url("../Picture/loupe.png") no-repeat 0 0;
+    width: 24px;
+    padding-right : 2px;
+}
+  
+#scAddUsg {
+    margin-top : 30px;
+}
+
+#scAddSurvey {
+    margin-top : 30px;
+}
+
+.addCase {
+    margin-top : 0;
+    margin-bottom : 0;  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scCase {
+    transform: translate(-8%, 0%);
+}
+
+input::placeholder {
+    opacity: 1; 
+}
+
+#TextBox1::placeholder { /* Question (text) */
+    font-size : 22px;
+}
+
+#btCreateInd {
+    position: relative; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(71%, -124%); /* décalage de 50% de sa propre taille */
+}
+
+#btAddInd {
+    position: relative; /* postulat de départ */
+    top: 0%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-172%, 0%); /* décalage de 50% de sa propre taille */
+    margin-top : 20px;
+}
+
+.divDdlInd {
+    position: relative; 
+    display : flexbox;
+    justify-content : flex-start;
+    max-width : 145px;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 10px;
+}
+
+.ddlInd {
+    margin-bottom : 8px;
+    width : 145px;
+    transform: translate(-122%, 0%); /* décalage de 50% de sa propre taille */
+}
+
+.pageTitle {
+    font-size : 26px;
+    font-weight : bold;
+    color : #CAC291;
+}
+
+#scRes {
+    display : flex;
+}
+
+#resRes {
+    width : 400px;
+    text-align : center;
+    margin-top : 10px;
+}
+
+table th {
+    background-color: #660033;
+    color : #CAC291;
+    border : 1px #FF9933;
+    border-style : double;
+    text-align : center;
+    padding-top : 5px;
+    padding-bottom : 5px;
+}
+
+.thRes {
+    font-weight: bold;
+}
+
+#chTabRes {
+    width : 300px;
+    margin : auto;
+}
+
+#nbVotTabRes {
+    width : 100px;
+    margin : auto;
+}
+
+td {
+    color : lightgrey;
+    padding-top : 4px;
+    padding-bottom : 2px;
+    background-color : #161616;
+    /*border-bottom : 1px solid #FF9933;*/
+}
+
+td:empty { /* marche pas */
+    display : none;
+    border : none;
+}
+
+td:hover {
+    background-color : #2D2D2D;
+}
+
+#textRes {
+    padding-left : 80px;
+}
+
+#pieCtnRes {
+    padding-right : 80px;
+    margin-left : auto;
+    position : relative;
+}
+
+.pieUszRes {
+    height : 800px;
+    width : 620px;
+    margin-top : 12px;
+}
+
+#btCom {
+    position: relative; /* postulat de départ */
+    top: 0%; left: 0%; /* à 50%/50% du parent référent */
+    transform: translate(73%, 0%); /* décalage de 50% de sa propre taille */
+}
+
+.txtZone {
+    margin-top : 30px;
+    width : 400px;
+    height : 50px;
+}
+
+#Button1 {
+    display :block;
+}
