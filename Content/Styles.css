@@ -53,7 +53,7 @@ h1 { font-weight: bold; color : red;
 }
 
 .add {
-    position: relative; /* postulat de départ */
+    position: relative; 
     top: 50%; left: 50%; /* à 50%/50% du parent référent */
     transform: translate(70%, 0%); /* décalage de 50% de sa propre taille */
 }
