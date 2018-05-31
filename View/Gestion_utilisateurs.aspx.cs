@@ -125,3 +125,22 @@ namespace Esondage2018.View
 
         }
 
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Gestion_utilisateurs.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Gestion_sondages.aspx");
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Session["nom"] = "";
+            Response.Redirect("login.aspx");
+        }
+
+        
+    }
+}
