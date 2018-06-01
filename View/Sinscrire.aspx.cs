@@ -37,9 +37,9 @@ namespace Esondage2018.View
             {
                 if (reader.Read())
                 {
-                    //Response.Redirect("Resultat.aspx", true);
+                    Response.Redirect("Resultat.aspx", true);
                     textboxt1.Visible = true;
-                    textboxt1.Text = "Email existe déja";
+                    textboxt1.Text = "Cette adresse e-mail existe déjà !";
                 }
                 else
                 {
@@ -68,7 +68,20 @@ namespace Esondage2018.View
                         textboxt1.Visible = true;
                         textboxt1.Text = ex.Message;
                     }
-            
+                    //Type cstype = this.GetType();
+
+                    //// Get a ClientScriptManager reference from the Page class.
+                    //ClientScriptManager cs = Page.ClientScript;
+
+                    //// Check to see if the startup script is already registered.
+                    //if (!cs.IsStartupScriptRegistered(cstype, "PopupScript"))
+                    //{
+                    //    String cstext = "alert('"+a+" est ajouté(e) avec succées');";
+                    //    cs.RegisterStartupScript(cstype, "PopupScript", cstext, true);
+                    //}
+                    //Page.ClientScript.RegisterStartupScript(Page.GetType(), "Message Box", "<script language = 'javascript'>alert('dd')</script>");
+                    //Response.Redirect("login.aspx", true);
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
                     Session["nom"] = a;
                     if (d.Equals("on"))
                     {
