@@ -40,11 +40,11 @@
 
             <div class="rhead">
         	    <div id="recherche" > <!-- method="post" -->
-                    <asp:TextBox ID="TextBox12" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
-                    <asp:Button ID="Button2" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
+                    <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
+                    <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
         	    </div>
 
-                <asp:ImageButton  ID="Button19" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="LinkButton2_Click" />
+                <asp:ImageButton  ID="log" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="log_Click" />
                 <a href="http://google.com" title="Profile"><img class="rslogo" alt="google.com" src="../Picture/user.png"/></a>
                 <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
                 <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
@@ -65,7 +65,6 @@
         </center>
                 <asp:Label ID="Label14" runat="server" ForeColor="#FFCC00" Text="Bonjour " style="text-align:left"></asp:Label>
                 <asp:Label ID="Label15" runat="server" ForeColor="#FFCC00" style="text-align:left"></asp:Label>
-            <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Red" OnClick="LinkButton2_Click">(Déconnexion)</asp:LinkButton>
                 <br />
             </p>
             <p>
@@ -76,85 +75,93 @@
                 <br />
             </asp:Panel>-->
         <section id="scAddSurvey">
-            <div id="csQues" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox1" runat="server" class="scCase ugsp input100" placeholder="Type the question here"></asp:TextBox>
+            <div id="csQues" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox1" runat="server" class="quesInd genInd txtPosInd input100" placeholder="Type the question here"></asp:TextBox>
             </div>
             
-            <div id="csAns1" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox2" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns1" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox2" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns2" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox3" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns2" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox3" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
                 <!--<i class="fa fa-plus"></i>-->
             </div>
 
-            <div id="csAns3" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox4" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns3" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox4" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns4" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox5" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns4" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox5" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns5" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox6" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns5" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox6" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns6" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox7" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns6" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox7" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns7" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox8" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns7" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox8" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns8" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox9" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns8" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox9" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns9" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox10" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns9" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox10" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-            <div id="csAns10" runat="server" class="addCase ugnom ugsp wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <asp:TextBox ID="TextBox11" runat="server" class="scCase ugsp input100" placeholder="Enter a poll answer"></asp:TextBox>
+            <div id="csAns10" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                <asp:TextBox ID="TextBox11" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
-        </section>
-        <section id="scBtInd">
-            <asp:Button ID="btAddInd" class="ugsp cadre" runat="server" OnClick="LinkButton1_Click" Text="New answer" />
 
+
+            <div id="addWrapInd" class="wrap-login100-form-btn">
+			    <div class="login100-form-bgbtn"></div>
+				<button id="btAddInd" runat="server" class="login100-form-btn" onserverclick="LinkButton1_Click">New answer</button>
+            </div>
             <!--<p>
                 <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="#FF9933" OnClick="LinkButton1_Click" Font-Bold="True" Font-Italic="True" Font-Size="X-Large">Ajouter un choix</asp:LinkButton>
             </p>-->
-            <div class="divDdlInd">
-                <asp:DropDownList ID="DropDownList1" runat="server" class="ddlInd" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                    <asp:ListItem>IP duplication</asp:ListItem>
-                    <asp:ListItem>Ip not duplication</asp:ListItem>
-                </asp:DropDownList>
 
-                <asp:DropDownList ID="DropDownList2" runat="server" class="ddlInd">
-                    <asp:ListItem>Choix multiple</asp:ListItem>
-                    <asp:ListItem>Un seul choix</asp:ListItem>
-                </asp:DropDownList>
-            </div>
+            <article id="artParamInd">
+                <div class="divDdlInd">
+                    <asp:DropDownList ID="DropDownList1" runat="server" class="ddlInd" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                        <asp:ListItem>IP duplication</asp:ListItem>
+                        <asp:ListItem>Ip not duplication</asp:ListItem>
+                    </asp:DropDownList>
+
+                    <asp:DropDownList ID="DropDownList2" runat="server" class="ddlInd">
+                        <asp:ListItem>Choix multiple</asp:ListItem>
+                        <asp:ListItem>Un seul choix</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             
-            <!--<asp:Button ID="Button1" runat="server"  BorderColor="#FF9933" ValidationGroup="Group1" BackColor="#660033" ForeColor="#FF9933"  Width="181px" Height="85px" OnClick="Button1_Click" TabIndex="1" Text="Créer un sondage" Font-Bold="True" Font-Italic="True" Font-Size="Large"/>
+                <!--<asp:Button ID="Button1" runat="server"  BorderColor="#FF9933" ValidationGroup="Group1" BackColor="#660033" ForeColor="#FF9933"  Width="181px" Height="85px" OnClick="Button1_Click" TabIndex="1" Text="Créer un sondage" Font-Bold="True" Font-Italic="True" Font-Size="Large"/>
                 
                
-            </p>
-            <br/>
-            </asp:Panel>-->
-            <asp:Label ID="Label13" runat="server" ForeColor="#6600CC"></asp:Label>
+                </p>
+                <br/>
+                </asp:Panel>-->
+                <asp:Label ID="Label13" runat="server" ForeColor="#6600CC"></asp:Label>
 
 
-            <!--<div id="admin" class="cadre">
-                <asp:CheckBox ID="CheckBox1" class="chk" runat="server"/>
-                <span class="chk ugsp">Admin</span>
-            </div>-->
+                <!--<div id="admin" class="cadre">
+                    <asp:CheckBox ID="CheckBox1" class="chk" runat="server"/>
+                    <span class="chk ugsp">Admin</span>
+                </div>-->
 
 
-            <asp:Button ID="btCreateInd" class="add ugsp cadre" runat="server" OnClick="Button1_Click" Text="Create"/>
+                <div id="createWrapInd" class="wrap-login100-form-btn">
+			        <div class="login100-form-bgbtn"></div>
+				    <button id="btCreateInd" runat="server" class="login100-form-btn" onserverclick="Button1_Click">Create</button>
+                </div>
+            </article>
         </section>
     </form>
 </body>

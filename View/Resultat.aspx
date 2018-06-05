@@ -41,11 +41,11 @@
 
             <div class="rhead">
         	    <div id="recherche" > <!-- method="post" -->
-                    <asp:TextBox ID="TextBox4" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
-                    <asp:Button ID="Button3" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
+                    <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
+                    <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
         	    </div>
 
-                <asp:ImageButton  ID="Button19" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="LinkButton2_Click" />
+                <asp:ImageButton  ID="log" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="log_Click" />
                 <a href="http://google.com" title="Profile"><img class="rslogo" alt="google.com" src="../Picture/user.png"/></a>
                 <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
                 <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
@@ -53,64 +53,84 @@
         </header>
 
         <section id="scRes">
-            <article id ="textRes">
-                <div>
+            <article id ="artTextRes" class="bdrLayout center">
+                <div id="posTitleRes">
                     <asp:Label ID="titleRes" runat="server" class="pageTitle"></asp:Label>
                 </div>
-                <table id="resRes">
-                    <tr>
-                        <th id="chTabRes" class="thRes">Choice</th>
-                        <th id="nbVotTabRes" class="thRes">Voting</th>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label4" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label5" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label6" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label7" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label8" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label9" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label10" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label11" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label12" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label13" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label14" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label15" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label16" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label17" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label18" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label19" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label20" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label21" runat="server"></asp:Label></td>
-                    </tr>
-                    <tr>
-                        <td><asp:Label ID="Label22" runat="server"></asp:Label></td>
-                        <td><asp:Label ID="Label23" runat="server"></asp:Label></td>
-                    </tr>
+                <table id="tabRes" class="dataRes center">
+                    <thead>
+                        <tr>
+                            <th id="chTabRes">Choice</th>
+                            <th id="nbVotTabRes">Voting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><asp:Label ID="Label4" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label5" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label6" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label7" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label8" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label9" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label10" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label11" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label12" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label13" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label14" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label15" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label16" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label17" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label18" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label19" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label20" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label21" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td><asp:Label ID="Label22" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="Label23" runat="server"></asp:Label></td>
+                        </tr>
+                    </tbody>
                 </table>
+
+                <div id ="comRes">
+                    <div id="showWrapRes" class="wrap-login100-form-btn">
+			            <div class="login100-form-bgbtn"></div>
+				        <button id="btShowRes" runat="server" class="login100-form-btn" onserverclick="btShowRes_Click">Show piechart</button>
+                    </div>
+                    <div id="comWrapRes" runat="server" class="wrap-login100-form-btn">
+			            <div class="login100-form-bgbtn"></div>
+				        <button id="btComRes" runat="server" class="login100-form-btn" onserverclick="btComRes_Click">Post a comment</button>
+                    </div>
+                </div>
                 
-                <asp:Button ID="Button2" runat="server" class="ugsp cadre" OnClick="btn_Click" Text="Show piechart"/>
-                <asp:Button ID="btCom" runat="server" class="ugsp cadre" OnClick="btCom_Click" Text="Post a comment"></asp:Button>
+                <div class="txtZone">
+                    <textarea id="comAreaRes" runat="server" rows="3" cols="10"></textarea>
+                </div>
 
-                <asp:TextBox ID="TextBox1" runat="server" class="txtZone"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" class="ugsp cadre" OnClick="Button1_Click" Text="Send"></asp:Button>
+                <div id="sendWrapRes" runat="server" class="wrap-login100-form-btn">
+			        <div class="login100-form-bgbtn"></div>
+				    <button id="btSendRes" runat="server" class="login100-form-btn" onserverclick="btSendRes_Click">Send</button>
+                </div>
 
-
+                <div id="posComRes">
+                    <asp:Label ID="Label24" runat="server"></asp:Label>
+                </div>
             </article>
 
             
@@ -118,55 +138,12 @@
                 <div>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-                    <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="1000"></asp:Timer>
+                    <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="20000"></asp:Timer>
                     
-                    <asp:Panel ID="panel1" runat="server"><iframe src="piechart/pie<%=kloo%>.html" class="pieUszRes"></iframe></asp:Panel>
-
+                    <div id="panel1" runat="server" type="hidden"><iframe src="piechart/pie<%=kloo%>.html" class="pieUszRes" type="hidden"></iframe></div>
                 </div>
             </article>
         </section>
-
-
-    <table>
-        <tr>
-            <td class="auto-style3">
-
-
-
-            <asp:TextBox ID="TextBox2" runat="server" Width="322px"></asp:TextBox>
-                            </td>
-                     </tr>
-                    <tr>
-                            <td class="auto-style2">
-                                <!--<asp:Label ID="Label3" runat="server"  ForeColor="#FF9933" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="Ecrire un commentaire : "></asp:Label>
-                                -->
-                                <br />
-                                <br />
-
-                                <!--<asp:TextBox ID="TextBoxXX" runat="server" Height="47px" Width="427px"></asp:TextBox>
-                                <br />-->
-                                <br />
-
-                               <!--<center> <asp:Button ID="ButtonR1" runat="server"   BorderColor="#FF9933" BackColor="#660033" ForeColor="#FF9933"  BorderStyle="Double" Height="41px" Text="Envoyer" Width="235px" OnClick="Button1_Click" /></center>
-                                -->
-                                <br />
-                                <asp:Label ID="Label24" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Large" ForeColor="#FF9933"></asp:Label>
-                                <br />
-                                <br />
-                                <br />
-
-                            </td>
-                     </tr>
-
-                </table>
-            </td>
-            <!--<td>
-               <asp:Button ID="btn" runat="server"   BorderColor="#FF9933" BackColor="#660033" ForeColor="#FF9933"  BorderStyle="Double" Height="41px" Text="Voir le graphe" Width="235px" OnClick="btn_Click" /> 
-               <asp:Panel ID="panel2" runat="server"><iframe src="piechart/pie<%=kloo%>.html" style="height: 877px; width: 703px; margin-right: 0px; margin-top: 0px" frameBorder="0"></iframe> </asp:Panel>
-            </td>-->
-        </tr>
-       
-    </table>
     </form>
-    </body>
+</body>
 </html>

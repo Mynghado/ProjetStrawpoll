@@ -61,44 +61,54 @@
 
             <div class="rhead">
         	    <div id="recherche" > <!-- method="post" -->
-                    <asp:TextBox ID="TextBox4" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
-                    <asp:Button ID="Button1" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
+                    <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
+                    <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
         	    </div>
 
-                <asp:ImageButton  ID="Button19" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="LinkButton2_Click" />
+                <asp:ImageButton  ID="log" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="log_Click" />
                 <a href="http://google.com" title="Profile"><img class="rslogo" alt="google.com" src="../Picture/user.png"/></a>
                 <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
                 <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
             </div>
         </header>
 
-        <section id="scAddUsg">
-            <div class="addCase ugnom wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
-                <span class="ugsp label-input100" runat="server">Name</span>
-                <asp:TextBox ID="TextBox3" runat="server" class="ugsp input100" placeholder="Enter the name"></asp:TextBox>
-                <span class="focus-input100" data-symbol="&#xf105;"></span>
+        <section id="scAddUsg" class="bdrLayout center"> 
+            <div id="posTitleUsg">
+                <asp:Label ID="titleRes" runat="server" class="pageTitle">Ajout d'un nouvel utilisateur</asp:Label>
             </div>
 
-            <div class="addCase ugnom wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <span class="ugsp label-input100" runat="server">E-mail</span>
-                <asp:TextBox ID="mailTxt" runat="server" class="ugsp input100" placeholder="Enter the mail"></asp:TextBox>
-                <span class="focus-input100" data-symbol="&#xf105;"></span>
-            </div>
+            <article id="scAddUsg">
+                <div class="csUsrUsg posInd wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
+                    <span class="lblUsrUsg label-input100" runat="server">Name</span>
+                    <asp:TextBox ID="TextBox3" runat="server" class="ugsp input100" placeholder="Enter the name"></asp:TextBox>
+                    <span class="focus-input100" data-symbol="&#xf105;"></span>
+                </div>
 
-            <div class="addCase ugnom wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
-                <span class="ugsp label-input100" runat="server">Password</span>
-                <asp:TextBox ID="TextBox2" runat="server" class="ugsp input100" placeholder="Enter the password"></asp:TextBox>
-                <span class="focus-input100" data-symbol="&#xf105;"></span>
-            </div>
-        </section>
+                <div class="csUsrUsg posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                    <span class="lblUsrUsg label-input100" runat="server">E-mail</span>
+                    <asp:TextBox ID="mailTxt" runat="server" class="ugsp input100" placeholder="Enter the mail"></asp:TextBox>
+                    <span class="focus-input100" data-symbol="&#xf105;"></span>
+                </div>
 
-        <section id="scBtUsg">
-            <div id="admin" class="cadre">
-                <asp:CheckBox ID="CheckBox1" class="chk" runat="server"/>
-                <span class="chk ugsp">Admin</span>
-            </div>  
+                <div class="csUsrUsg posInd wrap-input100 validate-input m-b-23" data-validate ="Ce champ est obligatoire">
+                    <span class="label-input100" runat="server">Password</span>
+                    <asp:TextBox ID="TextBox2" runat="server" class="ugsp input100" placeholder="Enter the password"></asp:TextBox>
+                    <span class="focus-input100" data-symbol="&#xf105;"></span>
+                </div>
+            </article>
 
-            <asp:Button ID="btAddUsg" class="add ugsp cadre" runat="server" OnClick="Button6_Click" Text="Add"/>
+            <article id="scBtUsg" class="center">
+                <div id="setAdmWrapUsg" class="wrap-login100-form-btn">
+                    <asp:CheckBox ID="CheckBox1" class="chk" runat="server"/>
+    		        <div class="login100-form-bgbtn"></div>
+				    <div id="btSetAdmUsg" runat="server" class="login100-form-btn">Admin</div>
+                </div>
+
+                <div id="createWrapUsg" class="wrap-login100-form-btn">
+    		        <div class="login100-form-bgbtn"></div>
+				    <button id="btCreateUsg" runat="server" class="login100-form-btn" onserverclick="Button6_Click">Create</button>
+                </div>
+            </article>
         </section>
     </form>
 </body>

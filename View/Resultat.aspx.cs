@@ -16,14 +16,12 @@ namespace Esondage2018.View
         public String kloo = "";
         protected void Page_Init(object sender, EventArgs e)
         {
-            btCom.Visible = false;
-            TextBox1.Visible = false;
-            //Button1.Text = "Ecrire un commentaire ";
+            //comWrapRes.Visible = false;
+            comAreaRes.Visible = false;
+            sendWrapRes.Visible = false;
             panel1.Visible = false;
 
             kloo = Vote.titlev;
-            TextBox2.Text = "http://localhost:54719/View/piechart/pie"+kloo+".html";
-            TextBox2.Visible = false;
             LinkedList<String> choix = new LinkedList<string>();
             LinkedList<String> nchoix = new LinkedList<string>();
             //Label1.Text = "Question n° " + idsondage + " : ";
@@ -52,67 +50,6 @@ namespace Esondage2018.View
                     choiceZeroVote.AddLast(Convert.ToString(reader["choix8"]));
                     choiceZeroVote.AddLast(Convert.ToString(reader["choix9"]));
                     choiceZeroVote.AddLast(Convert.ToString(reader["choix10"]));
-                    
-                    /*choiceZeroVote.AddLast(Convert.ToString(reader["choix1"]));
-                    choiceZeroVote.AddLast(Convert.ToString(reader["choix2"]));
-                    
-                    if (Convert.ToString(reader["choix3"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix3"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix4"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix4"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix5"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix5"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix6"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix6"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix7"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix7"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix8"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix8"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }
-                    if (Convert.ToString(reader["choix9"]) != "") {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix9"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    } 
-                    if (Convert.ToString(reader["choix10"]) != "")
-                    {
-                        choiceZeroVote.AddLast(Convert.ToString(reader["choix10"]));
-                    }
-                    else {
-                        Label14.Visible = false;
-                        Label15.Visible = false;
-                    }*/
                 }
 }
 
@@ -270,14 +207,14 @@ Label28.Text += "0 Vote(s) <br/>";*/
             }*/
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btSendRes_Click(object sender, EventArgs e)
         {
-            if (btCom.Visible)
+            if (comWrapRes.Visible)
             {
                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=" + Server.MapPath("~\\App_Data\\mydatabase.mdf") + ";Integrated Security=True");
 
                 SqlCommand insert = new SqlCommand("insert into comment(idpoll,commentaire,utilisateur,dateheure) values (@ids,@comment,@utilisateur,@dateheure);", conn);
-                insert.Parameters.AddWithValue("@comment", TextBox1.Text);
+                insert.Parameters.AddWithValue("@comment", comAreaRes.InnerText);
                 insert.Parameters.AddWithValue("@ids", idsondage);
                 String dt = DateTime.Now.ToString();
                 insert.Parameters.AddWithValue("@dateheure", dt);
@@ -292,7 +229,7 @@ Label28.Text += "0 Vote(s) <br/>";*/
                 {
                     conn.Open();
                     insert.ExecuteNonQuery();
-                    TextBox1.Text = "";
+                    comAreaRes.InnerText = "";
                     conn.Close();
                     Response.Redirect("Resultat.aspx", true);
                 }
@@ -303,12 +240,9 @@ Label28.Text += "0 Vote(s) <br/>";*/
             }
             else
             {
-                btCom.Visible = true;
-                TextBox1.Visible = true;
-                Button1.Text = "Envoyer";
+                //comWrapRes.Visible = true;
+                comAreaRes.Visible = true;
                 Timer1.Enabled = false;
-
-
             }
 
         }
@@ -316,10 +250,9 @@ Label28.Text += "0 Vote(s) <br/>";*/
         protected void Button2_Click(object sender, EventArgs e)
         {
             Timer1.Enabled = false;
-            TextBox2.Visible = true;
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
             Response.Redirect("login.aspx");
@@ -359,18 +292,18 @@ Label28.Text += "0 Vote(s) <br/>";*/
             Response.Redirect("Resultat.aspx");
         }
 
-        protected void btn_Click(object sender, EventArgs e)
+        protected void btShowRes_Click(object sender, EventArgs e)
         {
             Timer1.Enabled = false;
             panel1.Visible = true;
-            btn.Visible = false;
-            btCom.Visible = true;
-
+            //comWrapRes.Visible = true;
+            
         }
 
-        protected void btCom_Click(object sender, EventArgs e)
+        protected void btComRes_Click(object sender, EventArgs e)
         {
-            TextBox1.Visible = true;
+            comAreaRes.Visible = true;
+            sendWrapRes.Visible = true;
         }
         
     }

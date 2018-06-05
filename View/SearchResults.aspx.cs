@@ -13,9 +13,18 @@ namespace Esondage2018.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PreviousPage != null)
+            TextBox txtSearch;
+            // Rajouter condition "si page = page de recherche ..."
+            if (PreviousPage == null)
             {
-                TextBox txtSearch = (TextBox)PreviousPage.FindControl("TextBox4");
+                if (searchField.Text != null)
+                {
+                    lblSearch.Text = searchField.Text;
+                }
+            }
+            else if (PreviousPage != null)
+            {
+                txtSearch = (TextBox)PreviousPage.FindControl("searchField");
                 lblSearch.Text = txtSearch.Text;
             }
 
@@ -51,10 +60,15 @@ namespace Esondage2018.View
             conn.Close();
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
             Response.Redirect("login.aspx");
+        }
+
+        protected void Button2_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("SearchResults.aspx");
         }
     }
 }

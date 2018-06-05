@@ -51,7 +51,7 @@ namespace Esondage2018.View
             }
             if (mailexist == true)
             {
-                btAddUsg.Text = "walou";
+                //btAddUsg.Text = "walou";
                 //Response.Redirect("Resultat.aspx", true);
                 //textboxt1.Visible = true;
             }
@@ -91,7 +91,7 @@ namespace Esondage2018.View
                 }
                 catch (Exception ex)
                 {
-                    btAddUsg.Text = ex.Message;
+                    //btAddUsg.Text = ex.Message;
                 }
                 Response.Redirect("UserGest.aspx", true);
             }
@@ -139,7 +139,7 @@ namespace Esondage2018.View
             Response.Redirect("Gestion_sondages.aspx");
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
             Response.Redirect("login.aspx");

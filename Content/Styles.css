@@ -1,5 +1,5 @@
 ﻿body{
-    background-image :url(../Picture/losanges.jpg);
+    background-image :url('../Picture/fond1.jpg');
 }
 
 .hiddencol {
@@ -27,16 +27,6 @@ h1 { font-weight: bold; color : red;
 .aclass{Border: 1px solid lighgray;}
 .aclass tr td {background:green; font-weight:bold; color: white}
 
-.ugnom {
-    width : 500px;
-    text-align : left;
-}
-
-.ugsp {
-    color : #CAC291;
-    font-weight : bold;
-}
-
 .cadre {
     background-color : #660033;
     height : 35px;
@@ -57,31 +47,30 @@ h1 { font-weight: bold; color : red;
     top: 50%; left: 50%; /* à 50%/50% du parent référent */
     transform: translate(70%, 0%); /* décalage de 50% de sa propre taille */
 }
-.chk {
-    position: relative; /* postulat de départ */
-    top: 15%; left: 0%; /* à 50%/50% du parent référent */
-}
+
 
 .sthead {
-    background-color : #000000;
-    border-bottom :double;
+    background-color : #095228; /* à voir #660033 */
+    border-bottom : double;
     border-color : white;
+    max-height : 70px;
 }
 
 .rhead {
     display : flex;
     justify-content : flex-end;
-    transform: translate(0%, -100%);
+    transform: translate(0%, -105%);
     margin-right : 30px;
 }
 
 .lhead {
     display : flex;
     justify-content : flex-start;
+    width : 310px;
 }
 
 .stlogo {
-    margin-top : 12px;
+    margin-top : 8px;
     margin-left : 30px;
     width : 280px;
     height : 48px;
@@ -95,7 +84,7 @@ h1 { font-weight: bold; color : red;
 
 #recherche {
     width : 300px;
-    background : black;
+    background : #095228;
     border : 2px solid #fff;
 }
   
@@ -109,6 +98,7 @@ h1 { font-weight: bold; color : red;
   
 #recherche .sinput {
     font: 300 12px;
+    font-variant : small-caps;
     background : none;
     width: 262px;
     padding:0 9px;
@@ -122,44 +112,15 @@ h1 { font-weight: bold; color : red;
 }
   
 #scAddUsg {
-    margin-top : 30px;
 }
 
-#scAddSurvey {
-    margin-top : 30px;
-}
 
-.addCase {
-    margin-top : 0;
-    margin-bottom : 0;  
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.scCase {
-    transform: translate(-8%, 0%);
-}
 
-input::placeholder {
+input::placeholder { /* placeholder (gén.) */
     opacity: 1; 
 }
 
-#TextBox1::placeholder { /* Question (text) */
-    font-size : 22px;
-}
-
-#btCreateInd {
-    position: relative; /* postulat de départ */
-    top: 50%; left: 50%; /* à 50%/50% du parent référent */
-    transform: translate(71%, -124%); /* décalage de 50% de sa propre taille */
-}
-
-#btAddInd {
-    position: relative; /* postulat de départ */
-    top: 0%; left: 50%; /* à 50%/50% du parent référent */
-    transform: translate(-172%, 0%); /* décalage de 50% de sa propre taille */
-    margin-top : 20px;
-}
 
 .divDdlInd {
     position: relative; 
@@ -177,34 +138,226 @@ input::placeholder {
     transform: translate(-122%, 0%); /* décalage de 50% de sa propre taille */
 }
 
+#btCom {
+    position: relative; /* postulat de départ */
+    top: 0%; left: 0%; /* à 50%/50% du parent référent */
+    transform: translate(73%, 0%); /* décalage de 50% de sa propre taille */
+}
+
+#Button1 {
+    display :block;
+}
+
+
+/* Common */
+.center {
+    margin-left : auto;
+    margin-right : auto;
+    left : 0;
+    right : 0;
+}
+
+.bdrLayout {
+    margin-top : 30px;
+    margin-bottom : 30px;  
+    background-color : #F5F5F5;
+    border : 2px solid #660033;
+    border-radius: 10px;
+}
+
 .pageTitle {
     font-size : 26px;
     font-weight : bold;
-    color : #CAC291;
+    font-variant : small-caps;
+    color : #660033;
 }
 
-#scRes {
+.quesInd::-moz-placeholder { /* placeholder (question) */
+    font-size : 22px;
+    font-variant : small-caps;
+    color: #000000;
+}
+
+.quesInd { /* writing (question) */
+    font-size : 22px;
+    font-variant : small-caps;
+    color: #000000;
+}
+
+.txtZone {
+    width : 400px;
+    margin-top : 10px;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.chk {
+    position: relative; /* postulat de départ */
+    top: 17.5%; left: 20%; /* à 50%/50% du parent référent */
+}
+
+
+
+/* Index */
+#scAddSurvey {
+    margin-top : 30px;
+    width : 600px;
+    margin-left : auto;
+    margin-right : auto;
+    background-color : #F5F5F5;
+    border : 2px solid #660033;
+    border-radius: 10px;
+}
+
+.posInd {
+    margin-top : 0;
+    margin-bottom : 0;  
+    margin-left: auto;
+    margin-right: auto;
+    width : 500px;
+    text-align : left;
+}
+
+.txtPosInd { /* old scCase */
+    transform: translate(-8%, 0%);
+}
+
+.genInd {
+    font-weight : bold;
+}
+
+.repInd {
+    color : #ADADAD;
+}
+
+#addWrapInd {
+    width : 145px;
+    height : 35px;
+    top: 0%; left: -29.8%; /* à 50%/50% du parent référent */
+    margin-top : 10px;
+}
+
+#btAddInd {
+    margin-bottom : 10px;
+    height : 35px;
+}
+
+#createWrapInd {
+    width : 145px;
+    height : 35px;
+    top : -50%; left : 30%;
+    transform: translate(0%, -122%); /* décalage de 50% de sa propre taille */
+    margin-bottom : 8px;
+}
+
+#btCreateInd {
+    height : 35px;
+}
+
+#artParamInd {
+    display : flexb;
+}
+
+
+
+/* UserGest */
+#scAddUsg {
+    width : 600px;
+}
+
+#posTitleUsg {
+    width : 400px;
+    text-align : center;
+    margin-top : 10px;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.csUsrUsg {
+    margin-top : 15px;
+}
+
+#scBtUsg {
+    margin-top : 10px;
+    margin-bottom : 10px;
+    display : flex;
+    flex-wrap : wrap;
+}
+
+#createWrapUsg {
+    width : 145px;
+    height : 35px;
+}
+
+#btCreateUsg {
+    height : 35px;
+}
+
+#setAdmWrapUsg{    
+    width : 145px;
+    height : 35px;
     display : flex;
 }
 
-#resRes {
+#btSetAdmUsg {
+    height : 35px;
+}
+
+
+/* Vote */
+
+
+
+/* Results */
+#scRes {
+    display : flex;
+    flex-wrap : wrap;
+}
+
+#posTitleRes {
+    width : 400px;
+    text-align : center;
+    margin-top : 10px;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+#artTextRes {
+    width : 480px;
+}
+
+#tabRes {
     width : 400px;
     text-align : center;
     margin-top : 10px;
 }
 
-table th {
-    background-color: #660033;
-    color : #CAC291;
-    border : 1px #FF9933;
-    border-style : double;
+.dataRes thead th { 
     text-align : center;
-    padding-top : 5px;
+    background-color: #095228;
+    border: none;
+    color: #F5F5F5;
+    font-weight : bold;
     padding-bottom : 5px;
 }
 
-.thRes {
-    font-weight: bold;
+.dataRes thead th:first-child {
+    border-radius: 12px 0 0 0;
+}
+
+.dataRes thead th:last-child {
+    border-radius: 0 12px 0 0;
+}
+
+.dataRes tbody td:hover {
+    background-color: #E2E2E2;
+}
+
+.dataRes tbody td {
+    border: none;
+    border-top: solid 1px #095228;
+    background-color: #F5F5F5;
+    color : #000000;
 }
 
 #chTabRes {
@@ -217,51 +370,98 @@ table th {
     margin : auto;
 }
 
-td {
-    color : lightgrey;
-    padding-top : 4px;
-    padding-bottom : 2px;
-    background-color : #161616;
-    /*border-bottom : 1px solid #FF9933;*/
+#comRes {
+    margin-top : 10px;
+    display : flex;
+    flex-wrap : wrap;
 }
 
-td:empty { /* marche pas */
-    display : none;
-    border : none;
+#showWrapRes {
+    width : 145px;
+    height : 35px;
+    display : flex;
 }
 
-td:hover {
-    background-color : #2D2D2D;
+#btShowRes {
+    height : 35px;
 }
 
-#textRes {
-    padding-left : 80px;
+#comWrapRes {
+    width : 145px;
+    height : 35px;
+    display : flex;
+}
+
+#btComRes {
+    height : 35px;
+    top: 0%; left: -72%; 
+}
+
+#comAreaRes {
+    width : 400px;
+}
+
+#sendWrapRes {
+    width : 145px;
+    height : 35px;
+    margin-top : 10px;
+}
+
+#btSendRes {
+    height : 35px;
+}
+
+#posComRes {
+    width : 400px;
+    margin-top : 30px;
+    margin-left : auto;
+    margin-right : auto;
 }
 
 #pieCtnRes {
-    padding-right : 80px;
     margin-left : auto;
-    position : relative;
+    margin-right : auto;
+    left : 0;
+    right : 0;
 }
 
 .pieUszRes {
-    height : 800px;
+    height : 430px;
     width : 620px;
-    margin-top : 12px;
-}
-
-#btCom {
-    position: relative; /* postulat de départ */
-    top: 0%; left: 0%; /* à 50%/50% du parent référent */
-    transform: translate(73%, 0%); /* décalage de 50% de sa propre taille */
-}
-
-.txtZone {
     margin-top : 30px;
-    width : 400px;
-    height : 50px;
 }
 
-#Button1 {
-    display :block;
+#panel1 {
+    margin-left : auto;
+    margin-right : auto;
+    left : 0;
+    right : 0;
+}
+
+
+
+/* Search results */
+#artResRsh {
+    width : 810px;
+}
+
+.gridSpaceRsh {
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+.headTabRsh {
+    text-align : center;
+    background-color: #095228;
+    border: none;
+    color: #F5F5F5;
+    font-weight : bold;
+    padding-bottom : 5px;
+}
+
+.bodyTabRsh {
+    border: none;
+    border-top: solid 1px #095228;
+    background-color: #F5F5F5;
+    color : #000000;
 }

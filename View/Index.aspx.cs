@@ -20,7 +20,6 @@ namespace Esondage2018.View
             if (String.IsNullOrEmpty((String)Session["nom"]))
             {
                 Label15.Text = " Anonymous ";
-                LinkButton2.Visible = false;
                 Button4.Text = "Authentification";
                 Button5.Text = "Inscription";
 
@@ -395,11 +394,10 @@ namespace Esondage2018.View
 
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
             Response.Redirect("login.aspx");
-
         }
 
         protected void Button5_Click(object sender, EventArgs e)
