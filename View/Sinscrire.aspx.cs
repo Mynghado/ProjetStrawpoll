@@ -37,9 +37,9 @@ namespace Esondage2018.View
             {
                 if (reader.Read())
                 {
-                    Response.Redirect("Resultat.aspx", true);
+                    //Response.Redirect("Resultat.aspx", true);
                     textboxt1.Visible = true;
-                    textboxt1.Text = "Cette adresse e-mail existe déjà !";
+                    textboxt1.Text = "Email existe déja";
                 }
                 else
                 {
@@ -91,8 +91,13 @@ namespace Esondage2018.View
                     Response.Redirect("Index.aspx", true);
                 }
             }
-            }
-            
-        
+        }
+
+        /*protected void log_Click(object sender, EventArgs e)
+        {
+            Session["nom"] = "";
+            Session["admin"] = "";
+            Response.Redirect("login.aspx");
+        }*/
     }
 }

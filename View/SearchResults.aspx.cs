@@ -13,6 +13,11 @@ namespace Esondage2018.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty((String)Session["admin"]))
+            {
+                mngRsh.Visible = false;
+            }
+
             TextBox txtSearch;
             // Rajouter condition "si page = page de recherche ..."
             if (PreviousPage == null)
@@ -56,6 +61,7 @@ namespace Esondage2018.View
             GridView2.DataSource = ds2;
             GridView2.DataBind();
 
+            lblSearch.Text = "Search results for : " + lblSearch.Text;
 
             conn.Close();
         }
@@ -63,6 +69,7 @@ namespace Esondage2018.View
         protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
+            Session["admin"] = "";
             Response.Redirect("login.aspx");
         }
 

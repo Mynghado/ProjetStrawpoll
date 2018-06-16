@@ -142,6 +142,7 @@ namespace Esondage2018.View
         protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
+            Session["admin"] = "";
             Response.Redirect("login.aspx");
         }
 

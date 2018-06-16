@@ -34,13 +34,13 @@
 </head>
 <body background="images/bdsky.jpg">
     <form id="form1" runat="server">
-        <header class="sthead">
+        <!--<header class="sthead">
             <div class="lhead">
                 <a href="http://localhost:54719/View/Index.aspx" title="makeSurvey, add an user, Home" /><img class="stlogo" alt="flocalhost:54719/View/Index.aspx" src="../Picture/logo.png"/></a>
             </div>
 
             <div class="rhead">
-        	    <div id="recherche" > <!-- method="post" -->
+        	    <div id="recherche" >
                     <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
                     <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
         	    </div>
@@ -50,7 +50,7 @@
                 <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
                 <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
             </div>
-        </header>
+        </header>-->
 
         <section id="scRes">
             <article id ="artTextRes" class="bdrLayout center">
@@ -109,10 +109,10 @@
                 </table>
 
                 <div id ="comRes">
-                    <div id="showWrapRes" class="wrap-login100-form-btn">
+                    <!--<div id="showWrapRes" class="wrap-login100-form-btn">
 			            <div class="login100-form-bgbtn"></div>
 				        <button id="btShowRes" runat="server" class="login100-form-btn" onserverclick="btShowRes_Click">Show piechart</button>
-                    </div>
+                    </div>-->
                     <div id="comWrapRes" runat="server" class="wrap-login100-form-btn">
 			            <div class="login100-form-bgbtn"></div>
 				        <button id="btComRes" runat="server" class="login100-form-btn" onserverclick="btComRes_Click">Post a comment</button>

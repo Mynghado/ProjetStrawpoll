@@ -34,14 +34,14 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                <input type="button"  onclick="window.location.href='http://localhost:54719/View/Index.aspx'" value="Créer un sondage"  style="float: right; font-style: normal; font-weight: lighter; color: #9933FF; text-decoration: underline; background-color: #FFFFFF;" /><br /><br />
+                <input type="button"  onclick="window.location.href='http://localhost:54719/View/Index.aspx'" value="Create a poll"  style="float: right; font-style: normal; font-weight: lighter; color: #9933FF; text-decoration: underline; background-color: #FFFFFF;" /><br /><br />
 				<form class="login100-form validate-form" method="POST" runat="server">
 					<span class="login100-form-title p-b-49">
-						Inscription<br />
+						Registration<br />
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
-						<span class="label-input100">Nom</span>
+						<span class="label-input100">Name</span>
 						<input class="input100" type="text" id="nom" required="required" name="nom" placeholder="Entrer votre nom">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
@@ -53,22 +53,22 @@
 					</div>
 					
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
-						<span class="label-input100">Mot de passe</span>
+						<span class="label-input100">Password</span>
 						<input class="input100" type="password" id="motdepasse"  required="required" name="motdepasse" placeholder="Entrer votre mot de passe">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
-						<center><span class="label-input100">Cliquer sur ce carré si vous etes Administrateur</span></center>
+					<!--<div class="wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
+						<center><span class="label-input100">Clic on this square if you're an admin</span></center>
 						<input class="input100" type="checkbox" id="admin" name="admin" >
 						<span class="focus-input100" ></span>
-					</div>
+					</div>-->
 					
 					<center><asp:TextBox runat="server" id="textboxt1" Text="Cet émail existe déja" Font-Size="Smaller" ForeColor="Red" Width="160px"></asp:TextBox></center>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" runat="server"  id="add_passs" onserverclick="Add_Pass_Clicx" class="login100-form-btn">
-								S'inscrire</button>
+								Register</button>
 						</div>
 					</div>
 

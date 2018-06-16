@@ -19,7 +19,7 @@ namespace Esondage2018.View
             //comWrapRes.Visible = false;
             comAreaRes.Visible = false;
             sendWrapRes.Visible = false;
-            panel1.Visible = false;
+            panel1.Visible = true;
 
             kloo = Vote.titlev;
             LinkedList<String> choix = new LinkedList<string>();
@@ -189,7 +189,7 @@ Label28.Text += "0 Vote(s) <br/>";*/
                 LinkButton2.Visible = false;
                 Button4.Text = "Authentification";
                 Button5.Text = "Inscription";
-
+                
 
             }
             else
@@ -235,7 +235,7 @@ Label28.Text += "0 Vote(s) <br/>";*/
                 }
                 catch (Exception ex)
                 {
-
+                    //panel1.eventStore.reload();
                 }
             }
             else
@@ -255,6 +255,7 @@ Label28.Text += "0 Vote(s) <br/>";*/
         protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
+            Session["admin"] = "";
             Response.Redirect("login.aspx");
         }
 
@@ -294,8 +295,15 @@ Label28.Text += "0 Vote(s) <br/>";*/
 
         protected void btShowRes_Click(object sender, EventArgs e)
         {
-            Timer1.Enabled = false;
-            panel1.Visible = true;
+            if (Timer1.Enabled == true)
+            {
+                Timer1.Enabled = false;
+            }
+            else
+            {
+                Timer1_Tick(sender, e);
+            }
+            //panel1.Visible = true;
             //comWrapRes.Visible = true;
             
         }

@@ -33,23 +33,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <header class="sthead">
-            <div class="lhead">
-                <a href="http://localhost:54719/View/Index.aspx" title="makeSurvey, add an user, Home" /><img class="stlogo" alt="flocalhost:54719/View/Index.aspx" src="../Picture/logo.png"/></a>
-            </div>
-
-            <div class="rhead">
-        	    <div id="recherche" > <!-- method="post" -->
-                    <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
-                    <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
-        	    </div>
-
-                <asp:ImageButton  ID="log" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="log_Click" />
-                <a href="http://google.com" title="Profile"><img class="rslogo" alt="google.com" src="../Picture/user.png"/></a>
-                <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
-                <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
-            </div>
-        </header>
 
 
         <!--<asp:Panel ID="Panel1" runat="server" DefaultButton="" BackImageUrl="images/bdsky.jpg">
@@ -75,6 +58,9 @@
                 <br />
             </asp:Panel>-->
         <section id="scAddSurvey">
+            <div id="posTitleUsg">
+                <asp:Label ID="titleRes" runat="server" class="pageTitle">Create a new poll</asp:Label>
+            </div>
             <div id="csQues" runat="server" class="posInd wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
                 <asp:TextBox ID="TextBox1" runat="server" class="quesInd genInd txtPosInd input100" placeholder="Type the question here"></asp:TextBox>
             </div>
@@ -120,7 +106,6 @@
                 <asp:TextBox ID="TextBox11" runat="server" class="repInd genInd txtPosInd input100" placeholder="Enter a poll answer"></asp:TextBox>
             </div>
 
-
             <div id="addWrapInd" class="wrap-login100-form-btn">
 			    <div class="login100-form-bgbtn"></div>
 				<button id="btAddInd" runat="server" class="login100-form-btn" onserverclick="LinkButton1_Click">New answer</button>
@@ -133,12 +118,12 @@
                 <div class="divDdlInd">
                     <asp:DropDownList ID="DropDownList1" runat="server" class="ddlInd" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         <asp:ListItem>IP duplication</asp:ListItem>
-                        <asp:ListItem>Ip not duplication</asp:ListItem>
+                        <asp:ListItem>Not IP duplication</asp:ListItem>
                     </asp:DropDownList>
 
                     <asp:DropDownList ID="DropDownList2" runat="server" class="ddlInd">
-                        <asp:ListItem>Choix multiple</asp:ListItem>
-                        <asp:ListItem>Un seul choix</asp:ListItem>
+                        <asp:ListItem>Multiple choice</asp:ListItem>
+                        <asp:ListItem>One choice</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             

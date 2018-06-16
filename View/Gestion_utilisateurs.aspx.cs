@@ -15,6 +15,11 @@ namespace Esondage2018.View
         {
             if (String.IsNullOrEmpty((String)Session["admin"]))
             {
+                mngRsh.Visible = false;
+            }
+
+            if (String.IsNullOrEmpty((String)Session["admin"]))
+            {
                 
                 Response.Redirect("Index.aspx");
 
@@ -141,6 +146,11 @@ namespace Esondage2018.View
             Response.Redirect("login.aspx");
         }
 
-        
+        protected void log_Click(object sender, EventArgs e)
+        {
+            Session["nom"] = "";
+            Session["admin"] = "";
+            Response.Redirect("login.aspx");
+        }
     }
 }

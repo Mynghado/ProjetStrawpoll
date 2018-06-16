@@ -40,8 +40,6 @@ namespace Esondage2018.View
             }
             Panel1.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
 
-            csAns3.Visible = false;
-            csAns4.Visible = false;
             csAns5.Visible = false;
             csAns6.Visible = false;
             csAns7.Visible = false;
@@ -397,6 +395,7 @@ namespace Esondage2018.View
         protected void log_Click(object sender, EventArgs e)
         {
             Session["nom"] = "";
+            Session["admin"] = "";
             Response.Redirect("login.aspx");
         }
 

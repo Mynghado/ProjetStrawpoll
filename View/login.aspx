@@ -30,19 +30,18 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 
-                                <input type="button" onclick="window.location.href='http://localhost:54719/View/Index.aspx'" value="Créer un sondage"  style="float: right; font-style: normal; font-weight: lighter; color: #9933FF; text-decoration: underline; background-color: #FFFFFF;" /><br /><br />
+                                <input type="button" onclick="window.location.href='http://localhost:54719/View/Index.aspx'" value="Create a poll"  style="float: right; font-style: normal; font-weight: lighter; color: #9933FF; text-decoration: underline; background-color: #FFFFFF;" /><br /><br />
  
 
 				<form class="login100-form validate-form" method="POST" runat="server">
 					<span class="login100-form-title p-b-49">
 						
                     <br />
-						Authentification
+						Log In
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Ce champ est obligatoire">
@@ -64,7 +63,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" runat="server"  id="add_pass" onserverclick="Add_Pass_Click" class="login100-form-btn">
-								S'authentifier
+								Log In
 							</button>
 						</div>
 					</div>
@@ -73,14 +72,14 @@
 						<span>
 							
 						</span>
-					    <asp:TextBox ID="TextBox1" runat="server" ForeColor="Red" Height="21px" Width="151px">Utilisateur inconnu(e)</asp:TextBox>
+					    <asp:TextBox ID="TextBox1" runat="server" ForeColor="Red" Height="21px" Width="151px">Unknown user</asp:TextBox>
 					</div>
 
 				
 					
 
 						<center><a href="http://localhost:54719/View/Sinscrire.aspx#" class="txt2">
-							S'inscrire
+							Register
 						</a></center>
 					</div>
 				</form>

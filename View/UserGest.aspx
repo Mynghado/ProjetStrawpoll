@@ -74,7 +74,7 @@
 
         <section id="scAddUsg" class="bdrLayout center"> 
             <div id="posTitleUsg">
-                <asp:Label ID="titleRes" runat="server" class="pageTitle">Ajout d'un nouvel utilisateur</asp:Label>
+                <asp:Label ID="titleRes" runat="server" class="pageTitle">Add a new user</asp:Label>
             </div>
 
             <article id="scAddUsg">

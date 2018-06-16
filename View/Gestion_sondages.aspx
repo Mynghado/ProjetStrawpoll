@@ -3,7 +3,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../Content/Styles.css" />
+<!--===============================================================================================-->
     
         <title>E-sondage 2018</title>
         <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -35,15 +57,36 @@
                 }
             }
         </script>
-
-        <link rel="stylesheet" type="text/css" href="Content/Styles.css" />
     </head>
 
-<body  background="images/bdsky.jpg">
+<body>
     <form id="form2" runat="server">
+        <header class="sthead">
+            <div class="lhead">
+                <a href="http://localhost:54719/View/Index.aspx" title="makeSurvey, add an user, Home" /><img class="stlogo" alt="flocalhost:54719/View/Index.aspx" src="../Picture/logo.png"/></a>
+            </div>
+
+            <div class="rhead">
+        	    <div id="recherche" > <!-- method="post" -->
+                    <asp:TextBox ID="searchField" runat="server" class="sinput" placeholder="User or poll ..."></asp:TextBox>
+                    <asp:Button ID="search" runat="server" class="loupe" PostBackUrl="~/View/SearchResults.aspx" />
+        	    </div>
+
+                <asp:ImageButton  ID="log" runat="server" class="rslogo" ImageUrl="~/Picture/log.png" OnClick="log_Click" />
+                <a id="mngRsh" runat="server" href="http://google.com" title="Manage user and polls"><img class="rslogo" alt="google.com" src="../Picture/wrench.png"/></a>
+                <a href="http://google.com" title="Profile"><img class="rslogo" alt="google.com" src="../Picture/user.png"/></a>
+                <a href="http://facebook.com" title="Like our Facebook page"><img class="rslogo" alt="facebook.com" src="../Picture/facebook_logo.png"/></a>
+                <a href="http://twitter.com" title="Follow us on Twitter"><img class="rslogo" alt="twitter.com" src="../Picture/twitter_logo.png"/></a>
+            </div>
+        </header>
+        <section id="scGess" class="bdrLayout center">
+            <article id="artResGess" class="artLayout center">
+                <div id="posTitleGess">
+                    <asp:Label ID="titleGess" runat="server" class="pageTitle">Manage polls</asp:Label>
+                </div>
+
     
-        <asp:Panel ID="Panel1" runat="server" DefaultButton="" BackImageUrl="images/bdsky.jpg">
-        <center>
+        <!--<asp:Panel ID="Panel1" runat="server" DefaultButton="">
             <p>
                 <table align="right" ID="Table1" runat="server">
                     <tr><td class="auto-style9">
@@ -64,11 +107,13 @@
                 <br />
                 
                 <br />
-                <p>
-                    <asp:TextBox ID="TextBox4" runat="server" Height="31px" Width="134px"  ></asp:TextBox>
-                    <asp:Button ID="Button7" runat="server" BorderColor="#FF9933" BackColor="#660033" ForeColor="#FF9933" OnClick="Button7_Click" Text="Recherche par question" Height="31px" Width="215px" />
-                    <div>
-                        
+                <p>-->
+                    <div id="rshGess" class="center">
+                        <asp:TextBox ID="TextBox4" runat="server" Height="31px" Width="134px"  ></asp:TextBox>
+                        <asp:Button ID="Button7" runat="server" BorderColor="#FF9933" BackColor="#660033" ForeColor="#FF9933" OnClick="Button7_Click" Text="Recherche par question" Height="31px" Width="215px" />
+                    </div>
+
+                    <div class="gridSpace"> <!--AutoGenerateDeleteButton="True" AutoGenerateEditButton="True"--> 
                         <asp:GridView ID="GridView1" 
                             onrowcommand="CustomersGridView_RowCommand" 
                             DataKeyNames="Id" 
@@ -90,7 +135,7 @@
                             AllowSorting="True" 
                             Width="654px" 
                             OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
-                            CssClass="cssgridview"
+                            class="dataRes center"
                         >
                             
                             
@@ -163,8 +208,7 @@
                     <p>
                     </p>-->
                 </p>
-            </center>
-                </asp:Panel>
+                <!--</asp:Panel>-->
     </form>
 </body>
 </html>
